@@ -9,8 +9,8 @@ from flask.helpers import url_for
 # models
 from models.users import Users
 
-home = Module(__name__)
+listing = Module(__name__)
 
-@home.route('/')
+@listing.route('/')
 def index():
-    return render_template('home/index.html', **locals())
+    return render_template('listing/index.html', **locals())

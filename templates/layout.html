@@ -3,34 +3,52 @@
 <head>
     <meta charset="utf-8">
 
-	<title>Flask Skeleton</title>
+	<title>karma coder</title>
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link href="http://webfonts.fontslive.com/css/5f5f8ee2-b9d7-4654-94aa-89bf9e301285.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <header>
-        <div id="title">Flask Skeleton</div>
-        {% block nav %}{% endblock %}
-    </header>
-    <section>
-        <article>
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if error or messages %}
-                <ul class="messages">
-                    {% if error %}
-                    <li class="error">{{ error }}</li>
-                    {% endif %}
+<body class="{% block page %}{% endblock %}">
+    <div id="body">
+        <header>
+            <p>karma coder</p>
+        </header>
+        <section>
+            <div id="wrap">
+                <article>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if error or messages %}
+                        <ul class="messages">
+                            {% if error %}
+                            <li class="error">{{ error }}</li>
+                            {% endif %}
 
-                    {% for category, message in messages %}
-                    <li class="{{ category }}">{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            {% endwith %}
+                            {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    {% endwith %}
 
-            {% block body %}{% endblock %}
-        </article>
-        <footer>Powered by Flask</footer>
-    </section>
+                    <div id="page">
+                        {% block body %}{% endblock %}
+                    </div>
+                    
+                    <footer>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Home</a>,</li>
+                                <li><a href="#">Policy</a>,</li>
+                                <li><a href="#">About</a>,</li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <p>A project by <a href="http://radekstepan.com">Radek Stepan</a></p>
+                    </footer>
+                </article>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

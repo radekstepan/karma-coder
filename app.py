@@ -16,7 +16,7 @@ def create_app(database):
     app = Flask(__name__)
     app.debug = True
     app.config.from_object(__name__)
-    app.secret_key = 'jr/$^_^"%6{>=!1:Chx(bvK2h%SN?H@/1?X4K`J4=@fJ=1MvYs"k4h;-ty2vq'
+    app.secret_key = '^]CUCqFL6;wVz-w4%#ZYKTIB]kWT+3rfAq@_}(p;r%Mjq6umt9\>8-.){.u!uA*'
 
     # db import
     from libs.db import init_connection
@@ -25,10 +25,10 @@ def create_app(database):
     init_connection(database)
 
     # presenters
-    from presenters.home import home
+    from presenters.listing import listing
 
     # register modules
-    app.register_module(home)
+    app.register_module(listing)
 
     # template filters
     @app.template_filter('test_format')
