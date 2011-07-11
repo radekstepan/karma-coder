@@ -6,7 +6,7 @@
 	<title>karma coder</title>
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
-    <link href="http://webfonts.fontslive.com/css/5f5f8ee2-b9d7-4654-94aa-89bf9e301285.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body class="{% block page %}{% endblock %}">
@@ -17,7 +17,7 @@
         <section>
             <div id="wrap">
                 <article>
-                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% with messages = get_flashed_messages(with_categories=true) -%}
                         {% if error or messages %}
                         <ul class="messages">
                             {% if error %}
@@ -29,7 +29,7 @@
                             {% endfor %}
                         </ul>
                         {% endif %}
-                    {% endwith %}
+                    {%- endwith -%}
 
                     <div id="page">
                         {% block body %}{% endblock %}

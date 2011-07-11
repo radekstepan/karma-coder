@@ -1,4 +1,4 @@
-body { background:#4D096F /*url('../img/karmacoder.png') no-repeat top center;*/ }
+body { background:#4D096F; }
 #body { width:1000px; margin:0 auto; position:relative; font-family:Calibri,sans-serif; font-size:14px; }
 
 header { position:absolute; top:0; left:0; background:url('../img/logo.png') no-repeat top left; z-index:-1; }
@@ -28,6 +28,25 @@ body.index #left div.title,
 body.index #right div.title { border-bottom:1px solid #4E0A70; line-height:20px; }
 
 body.index #left { background:url('../img/left-box.png') no-repeat top left; width:501px; height:132px; }
-body.index #left div.title { width:300px; }
+body.index #left div.title { width:405px; }
 body.index #right { background:url('../img/right-box.png') no-repeat top left; width:389px; height:132px; float:right; }
-body.index #right div.title { width:300px; }
+body.index #right div.title { width:300px; margin-bottom:18px; }
+
+body.index fieldset { margin:12px 0; }
+body.index label { color:#B90267; font-weight:bold; }
+body.index input[type="text"] { color:#B90267; font-size:11px; background:url('../img/input.png') no-repeat top left;
+    width:231px; height:20px; border:0; padding:2px; margin:0 10px; }
+body.index input[type="submit"] { background:url('../img/button.png') no-repeat top left; width:57px; height:24px;
+    border:0; cursor:pointer; color:#FFF; font-size:13px; }
+body.index fieldset input { vertical-align:middle; }
+
+body.index ul { color:#4D096F; }
+body.index ul li { line-height:20px; padding-left:20px; }
+body.index ul li.code { background:url('../img/ico-code.png') no-repeat left center; }
+body.index ul li.karma { background:url('../img/ico-heart.png') no-repeat left center; }
+body.index ul li.no { background:url('../img/ico-no.png') no-repeat left center; }
+body.index ul li.coders { background:url('../img/ico-people.png') no-repeat left center; }
+
+body.index #right a { color:#B90267; font-weight:bold; }
+body.index #right span { color:#B90267; font-size:13px; margin-left:4px; }
+body.index #right ul { margin-top:16px; }

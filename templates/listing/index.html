@@ -1,10 +1,19 @@
 {% extends "layout.html" %}
 {% block page %}index{% endblock %}
-{% block body %}
+
+{% block body -%}
+
 <div id="right">
     <div class="title">
         <h2>Businesses, Nonprofits <span class="raquo"></span></h2>
     </div>
+
+    <a href="#">Post a job</a> <span>(free and quick)</span>
+
+    <ul>
+        <li class="no">No cost to you</li>
+        <li class="coders">Coders contact you</li>
+    </ul>
 </div>
 <div id="left">
     <div class="title">
@@ -13,11 +22,16 @@
 
     <fieldset>
         <label for="q">Find your job</label>
-        <input id="q" type="text">
+        <input id="q" type="text" value="e.g. web design, php coder">
         <input type="submit" value="Search">
     </fieldset>
+
+    <ul>
+        <li class="code">Get commercial experience</li>
+        <li class="karma">Get karma for doing good</li>
+    </ul>
 </div>
 
 <p>More here</p>
 
-{% endblock %}
+{%- endblock %}
