@@ -26,9 +26,11 @@ def create_app(database):
 
     # presenters
     from presenters.listing import listing
+    from presenters.doc import doc
 
     # register modules
     app.register_module(listing)
+    app.register_module(doc)
 
     # template filters
     @app.template_filter('test_format')
