@@ -7,12 +7,14 @@ from flask import render_template, request, redirect
 from flask.helpers import url_for
 
 # models
-from models.users import Users
+from models.tags import Tags
 
 listing = Module(__name__)
 
 @listing.route('/')
 def index():
+    tags = Tags()
+
     return render_template('listing/index.html', **locals())
 
 @listing.route('/new')
