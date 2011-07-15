@@ -35,23 +35,17 @@
 <div id="tags">
     <h2>Filter by tags <span>(<a href="#">remove filter</a>)</span></h2>
 
-    {{ tags.tags }}
-
     <ul class="groups">
-        <li class="group first">
-            <div class="letter">A</div>
+        {% for group in tags.tags %}
+        <li class="group {% if loop.first %}first{% endif %}">
+            <div class="letter">{{ group[0] }}</div>
             <div class="tags">
-                <a href="#">antonius</a>, <a href="#" class="active">auto</a>, <a href="#">arbalest</a>,
-                <a href="#">antonius</a>, <a href="#" class="active">auto</a>, <a href="#">arbalest</a>,
-                <a href="#">antonius</a>, <a href="#" class="active">auto</a>, <a href="#">arbalest</a>
+                {% for tag in group[1] %}
+                    <a href="#">{{ tag }}</a>{% if not loop.last %},{% endif %}
+                {% endfor %}
             </div>
         </li>
-        <li class="group">
-            <div class="letter">D</div>
-            <div class="tags">
-                <a href="#" class="active">designer</a>, <a href="#">developer</a>, <a href="#">dev</a>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
 </div>
 
