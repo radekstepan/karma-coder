@@ -17,19 +17,13 @@
         <section>
             <div id="wrap">
                 <article>
-                    {% with messages = get_flashed_messages(with_categories=true) -%}
-                        {% if error or messages %}
+                    {% if messages %}
                         <ul class="messages">
-                            {% if error %}
-                            <li class="error">{{ error }}</li>
-                            {% endif %}
-
-                            {% for category, message in messages %}
-                            <li class="{{ category }}">{{ message }}</li>
-                            {% endfor %}
+                        {% for message in messages %}
+                            <li class="{{ message.category }}">{{ message.text }}</li>
+                        {% endfor %}
                         </ul>
-                        {% endif %}
-                    {%- endwith -%}
+                    {% endif %}
 
                     <div id="page">
                         {% block body %}{% endblock %}

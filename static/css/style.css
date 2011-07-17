@@ -21,6 +21,10 @@ h2 { color:#4E0A70; font-weight:bold; font-size:17px; letter-spacing:-0.5px; }
 h2 span.raquo { background:url('../img/raquo.png') no-repeat left; height:9px; width:9px; display:inline-block; }
 h3 { color:#000; font-weight:bold; font-size:15px; }
 
+ul.messages { padding:20px 20px 0; }
+ul.messages li { padding:2px; margin-bottom:2px; }
+ul.messages li.warning { border:1px solid #E7BE1E; background:#F9EEC8; }
+
 /* forms */
 body label { color:#B90267; font-weight:bold; }
 body input[type="text"] { font-size:11px; background:url('../img/input.png') no-repeat top left;

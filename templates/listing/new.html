@@ -13,31 +13,31 @@
 <form method="post">
     <div class="field">
         <label for="title">Title</label>
-        <input type="text" id="title" placeholder="Looking to build a Twitter client">
+        <input type="text" name="title" id="title" placeholder="Looking to build a Twitter client" value="{{ title }}">
     </div>
     <div class="field">
         <label for="description">Description</label>
-        <textarea id="description"></textarea>
+        <textarea name="description" id="description">{{ description }}</textarea>
     </div>
     <div class="field">
         <label for="tags">Tags</label>
-        <input type="text" id="tags" placeholder="php, html, javascript">
+        <input type="text" name="tags" id="tags" placeholder="php, html, javascript" value="{{ tags }}">
     </div>
     <div class="field">
         <label for="location">Location</label>
-        <input type="text" id="location" placeholder="Cambridge, UK">
+        <input type="text" name="location" id="location" placeholder="Cambridge, UK" value="{{ location }}">
     </div>
     <div class="field">
         <label for="email">Contact e-mail</label>
-        <input type="text" id="email" placeholder="your@email.com">
+        <input type="text" name="email" id="email" placeholder="your@email.com" value="{{ email }}">
     </div>
     <div class="field">
         <label class="inline" for="expiry-1">Expire in: &nbsp; 1 week</label>
-        <input type="radio" id="expiry-1" name="expiry" value="1" checked="checked" />
+        <input type="radio" id="expiry-1" name="expiry" value="1" {% if not expiry or expiry == '1' %}checked="checked"{% endif %} />
         <label class="inline" for="expiry-2">2 weeks</label>
-        <input type="radio" id="expiry-2" name="expiry" value="2" />
+        <input type="radio" id="expiry-2" name="expiry" value="2" {% if expiry and expiry == '2' %}checked="checked"{% endif %} />
         <label class="inline" for="expiry-3">1 month</label>
-        <input type="radio" id="expiry-3" name="expiry" value="3" />
+        <input type="radio" id="expiry-3" name="expiry" value="3" {% if expiry and expiry == '3' %}checked="checked"{% endif %} />
     </div>
     <input type="submit" value="Save">
 </form>
