@@ -8,6 +8,7 @@ from flask.helpers import url_for
 
 # models
 from models.tags import Tags
+from models.jobs import Jobs
 
 listing = Module(__name__)
 
@@ -30,12 +31,18 @@ def new():
         else: messages.append({"category":"warning", "text":"Missing job tags"})
         if 'location' in request.form and request.form['location']: location = request.form['location']
         else: messages.append({"category":"warning", "text":"Missing job location"})
-        if 'email' in request.form and request.form['email']: location = request.form['email']
+        if 'email' in request.form and request.form['email']: email = request.form['email']
         else: messages.append({"category":"warning", "text":"Missing your e-mail address"})
         if 'expiry' in request.form and request.form['expiry']: expiry = request.form['expiry']
         else: messages.append({"category":"warning", "text":"You need to set an expiry period"})
 
         if not messages:
+            j = Jobs()
+
+            # TODO: try catch me
+            j.save(title, description, tags, location, email, expiry)
+            messages.append({"category":"success", "text":"Your job has been saved"})
+
             # GET after POST
             return redirect(url_for('new'))
     return render_template('listing/new.html', **locals())

@@ -18,7 +18,7 @@ def database_name():
     '''get database name'''
     return db.database.database.name
 
-class Collection:
+class Collection(object):
     '''a generic collection api'''
 
     def paginator(self, query, per_page):
