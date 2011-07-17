@@ -21,7 +21,18 @@ h2 { color:#4E0A70; font-weight:bold; font-size:17px; letter-spacing:-0.5px; }
 h2 span.raquo { background:url('../img/raquo.png') no-repeat left; height:9px; width:9px; display:inline-block; }
 h3 { color:#000; font-weight:bold; font-size:15px; }
 
+/* forms */
+body label { color:#B90267; font-weight:bold; }
+body input[type="text"] { font-size:11px; background:url('../img/input.png') no-repeat top left;
+    width:231px; height:20px; border:0; padding:2px; margin:0 10px; }
+body input[type="submit"] { background:url('../img/button.png') no-repeat top left; width:57px; height:24px;
+    border:0; cursor:pointer; color:#FFF; font-size:13px; }
+body textarea { background:url('../img/textarea.png') repeat-x top left; width:500px; height:300px; padding:2px;
+    font-size:11px; border:1px solid #C8C8C8; -moz-border-radius:3px; border-radius:3px; }
+
 /* page specific */
+body.index input[type="text"] { color:#B90267; }
+
 body.index #left,
 body.index #right { padding:10px; }
 
@@ -34,11 +45,6 @@ body.index #right { background:url('../img/right-box.png') no-repeat top left; w
 body.index #right div.title { width:300px; margin-bottom:18px; }
 
 body.index fieldset { margin:12px 0; }
-body.index label { color:#B90267; font-weight:bold; }
-body.index input[type="text"] { color:#B90267; font-size:11px; background:url('../img/input.png') no-repeat top left;
-    width:231px; height:20px; border:0; padding:2px; margin:0 10px; }
-body.index input[type="submit"] { background:url('../img/button.png') no-repeat top left; width:57px; height:24px;
-    border:0; cursor:pointer; color:#FFF; font-size:13px; }
 body.index fieldset input { vertical-align:middle; }
 
 body.index article #page ul { color:#4D096F; }
@@ -76,3 +82,12 @@ body.index #tags ul.groups li.group div.letter { color:#2D2D2D; font-weight:bold
 body.index #tags ul.groups li.group div.tags { width:349px; display:inline-block; }
 body.index #tags ul.groups li.group div.tags a { color:#2D2D2D; font-size:12px; }
 body.index #tags ul.groups li.group div.tags a.active { color:#B90267; text-decoration:none; font-weight:bold; }
+
+body.new label { display:block; }
+body.new label.inline { display:inline; }
+body.new input,
+body.new textarea { margin:2px 0 10px 0; }
+body.new input[type="radio"] { margin-right:20px; }
+
+body.new h2 { margin-bottom:20px; }
+body.new p.description { float:right; width:400px; }

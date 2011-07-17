@@ -5,15 +5,15 @@
 
 <h2>Post a new job listing</h2>
 
-<p>
+<p class="description">
     Make sure to mention who you are looking for.
     Tags give you a space to mention the languages and skills you are seeking and what type of project this is
 </p>
 
-<form>
+<form method="post">
     <div class="field">
         <label for="title">Title</label>
-        <input type="text" id="title">
+        <input type="text" id="title" placeholder="Looking to build a Twitter client">
     </div>
     <div class="field">
         <label for="description">Description</label>
@@ -21,24 +21,25 @@
     </div>
     <div class="field">
         <label for="tags">Tags</label>
-        <input type="text" id="tags">
+        <input type="text" id="tags" placeholder="php, html, javascript">
     </div>
     <div class="field">
         <label for="location">Location</label>
-        <input type="text" id="location">
+        <input type="text" id="location" placeholder="Cambridge, UK">
     </div>
     <div class="field">
         <label for="email">Contact e-mail</label>
-        <input type="text" id="email">
+        <input type="text" id="email" placeholder="your@email.com">
     </div>
     <div class="field">
-        <label for="expiry-1">1 week</label>
+        <label class="inline" for="expiry-1">Expire in: &nbsp; 1 week</label>
         <input type="radio" id="expiry-1" name="expiry" value="1" checked="checked" />
-        <label for="expiry-2">2 weeks</label>
+        <label class="inline" for="expiry-2">2 weeks</label>
         <input type="radio" id="expiry-2" name="expiry" value="2" />
-        <label for="expiry-3">1 month</label>
+        <label class="inline" for="expiry-3">1 month</label>
         <input type="radio" id="expiry-3" name="expiry" value="3" />
     </div>
+    <input type="submit" value="Save">
 </form>
 
 {%- endblock %}
